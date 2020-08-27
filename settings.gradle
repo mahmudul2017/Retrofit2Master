@@ -1,0 +1,2 @@
+rootProject.name='RetrofitNetworkCallInKotlin'
+include ':app'
