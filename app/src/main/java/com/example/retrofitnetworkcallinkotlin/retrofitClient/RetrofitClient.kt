@@ -32,7 +32,7 @@ object RetrofitClient {
         builder.connectTimeout(30, TimeUnit.SECONDS)
         builder.readTimeout(30, TimeUnit.SECONDS)
         builder.writeTimeout(30, TimeUnit.SECONDS)
-        if (baseUrl == "api") {
+        if (baseUrl == "jsonplaceholder") {
             retrofit = Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -47,6 +47,12 @@ object RetrofitClient {
         } else if (baseUrl == "githubApi") {
             retrofit = Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient)
+                .build()
+        }  else if (baseUrl == "simplifiedCoding") {
+            retrofit = Retrofit.Builder()
+                .baseUrl("https://api.simplifiedcoding.in/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)
                 .build()
