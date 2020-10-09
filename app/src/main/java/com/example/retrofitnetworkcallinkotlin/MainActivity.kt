@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
       val lastLoginObject = LastLoginResponse("dateTime|UNIX", "172.242.228.245");
       val dataObjectClass = ApiResponse("555", "internetEmail", "personGender", "name", lastLoginObject);
 
-        val mainObjectClass = DataMainResponse("MPSfLPolMP80AQJpPc5cYQ",dataObjectClass);
+        val mainObjectClass = DataMainResponse("MPSfLPolMP80AQJpPc5cYQ", dataObjectClass);
         val call = userInterface.addFakeUserLogin(mainObjectClass)
         call.enqueue(object: Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendLoginRequest() {
-        val email = "1probelalkhan@gmail.com"
+        val email = "probelalkhan@gmail.com"
         val password = 123456
         val userLoginData = UserLoginData(email, password)
         val call = userInterface.addUserLogin(userLoginData)
